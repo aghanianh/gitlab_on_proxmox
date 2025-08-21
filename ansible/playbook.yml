@@ -1,0 +1,7 @@
+---
+- name: Deploying Self Managed Gitlab 
+  hosts: all 
+  become: yes
+
+  roles:
+    - gitlab

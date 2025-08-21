@@ -1,0 +1,28 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for gitlab
+- name: Install required packages
+  ansible.builtin.apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+
+- name: Open required ports
+  community.general.ufw:
+    rule: allow
+    port: "{{ item }}"
+  loop: "{{ ports }}"
+
+- name: Add GitLab repository
+  ansible.builtin.shell: |
+    curl -s "https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh" | bash
+  args:
+    executable: /bin/bash
+
+- name: Install GitLab CE with external URL
+  ansible.builtin.apt:
+    name: gitlab-ce
+    state: present
+    update_cache: yes
+  environment:
+    EXTERNAL_URL: "http://{{ ansible_default_ipv4.address }}"

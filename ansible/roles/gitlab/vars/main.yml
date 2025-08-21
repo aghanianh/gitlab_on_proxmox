@@ -1,0 +1,9 @@
+packages:
+  - curl
+
+ports:
+  - 22
+  - 80
+  - 443
+
+
