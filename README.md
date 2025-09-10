@@ -1,4 +1,4 @@
-# GitLab Hosted Infrastructure with Packer
+#  GitLab Hosted Infrastructure with Packer
 
 This project automates the deployment of a self-hosted GitLab instance using HashiCorp Packer to create a Proxmox VM image, followed by Ansible provisioning to install and configure GitLab.
 
