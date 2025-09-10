@@ -33,7 +33,7 @@ gitlab-hosted/
 - **SSH Key Pair** for VM access
 - **Ubuntu 24.04.3 ISO** uploaded to Proxmox storage
 
-## ⚙️ Configuration
+##  ⚙️ Configuration
 
 ### Required Variables
 
